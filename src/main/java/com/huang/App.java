@@ -1,8 +1,6 @@
 package com.huang;
 
-import com.huang.example.stack.LinkListStack;
-
-import java.util.Stack;
+import com.huang.example.stack.StackCalculator;
 
 /**
  * Hello world!
@@ -11,18 +9,8 @@ import java.util.Stack;
 public class App {
     public static void main( String[] args ) {
 
-        LinkListStack linkListStack = new LinkListStack();
-        linkListStack.push("一号");
-        linkListStack.push("二号");
-        linkListStack.push("三号");
-        linkListStack.push("四号");
+        StackCalculator calculator = new StackCalculator();
 
-
-        System.out.println(linkListStack.pop());
-        System.out.println(linkListStack.pop());
-
-        System.out.println();
-        linkListStack.show();
-
+        calculator.calculate("80*42*3-6+9/3-9");
     }
 }
