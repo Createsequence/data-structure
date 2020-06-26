@@ -20,4 +20,8 @@
    - ArrayStack：使用数组实现的栈
    - LinkListStack：使用链表实现的栈
    - StackCalculator：基于栈和递归实现的加减乘除计算器
+4. recursion:
+   - Factorial：阶乘问题
+   - Mazu：迷宫回溯问题
+   - EightQueens：八皇后问题
 
