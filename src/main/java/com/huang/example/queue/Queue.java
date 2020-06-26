@@ -60,11 +60,9 @@ public class Queue {
             for (int i = front; i < rear; i++) {
                 arr[i - front] = arr[i];
             }
-            System.out.println("原尾指针：" + rear + ";头指针：" + front);
             //移动指针
             rear -= front;
             front = -1;
-            System.out.println("尾指针：" + rear + ";头指针：" + front);
         }
         //尾指针后移
         rear++;
