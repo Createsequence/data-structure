@@ -11,10 +11,14 @@ public class EightQueens {
         EightQueens eightQueens = new EightQueens();
         eightQueens.set(0);
         System.out.println("共有摆法：" + eightQueens.count);
+        System.out.println("判断次数：" + eightQueens.checkCount);
     }
 
     //记录八皇后有几种摆法
     int count = 0;
+
+    //冲突次数
+    int checkCount = 0;
 
     //表示皇后位置的数组
     int[] arr = new int[8];
@@ -62,6 +66,9 @@ public class EightQueens {
      * @return
      */
     public boolean check(int n) {
+        //计算共进行多少次判断
+        checkCount++;
+
         //检查第n层之前的皇后位置
         for (int i = 0; i < n; i++) {
             // arr[i] == arr[n] 检查是否同一列

@@ -24,4 +24,8 @@
    - Factorial：阶乘问题
    - Mazu：迷宫回溯问题
    - EightQueens：八皇后问题
+5. sort:
+   - BubbleSort：冒泡排序
+   - InsertSort：插入排序
+   - SelectSort：选择排序
 
