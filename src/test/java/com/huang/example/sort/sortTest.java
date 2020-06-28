@@ -66,18 +66,25 @@ public class sortTest {
     }
 
     @Test
-    public void testAll(){
+    public void testShellSortByExchange(){
         Long startTime = getFunctionStartTime();
-        SelectSort.sort(arr);
-        getFunctionRunningTime("选择排序", startTime);
-
-        startTime = getFunctionStartTime();
-        BubbleSort.sort(arr);
-        getFunctionRunningTime("冒泡排序", startTime);
-
-
-        startTime = getFunctionStartTime();
-        InsertSort.sort(arr);
-        getFunctionRunningTime("插入排序", startTime);
+        ShellSort.sortByExchange(arr);
+        getFunctionRunningTime("希尔排序（交换法）", startTime);
     }
+
+    @Test
+    public void testShellSortByMove(){
+        Long startTime = getFunctionStartTime();
+        ShellSort.sortByMove(arr);
+        getFunctionRunningTime("希尔排序（移位法）", startTime);
+
+    }
+
+    @Test
+    public void testQuickSort(){
+        Long startTime = getFunctionStartTime();
+        QuickSort.sort(arr);
+        getFunctionRunningTime("快速排序", startTime);
+    }
+
 }
