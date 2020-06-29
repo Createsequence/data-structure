@@ -87,4 +87,11 @@ public class sortTest {
         getFunctionRunningTime("快速排序", startTime);
     }
 
+    @Test
+    public void testMergeSort() {
+        Long startTime = getFunctionStartTime();
+        MergeSort.sort(arr);
+        getFunctionRunningTime("归并排序", startTime);
+    }
+
 }
