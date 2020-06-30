@@ -11,7 +11,7 @@ import org.junit.Test;
 public class sortTest {
 
     //生成的测试数组长度
-    static int max = 80000;
+    static int max = 80000000;
     static int[] arr = new int[max];
 
     /**
@@ -92,6 +92,13 @@ public class sortTest {
         Long startTime = getFunctionStartTime();
         MergeSort.sort(arr);
         getFunctionRunningTime("归并排序", startTime);
+    }
+
+    @Test
+    public void testRadixSort(){
+        Long startTime = getFunctionStartTime();
+        RadixSort.sort(arr);
+        getFunctionRunningTime("基数排序", startTime);
     }
 
 }
