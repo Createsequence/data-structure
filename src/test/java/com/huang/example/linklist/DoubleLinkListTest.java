@@ -1,6 +1,5 @@
 package com.huang.example.linklist;
 
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -8,7 +7,7 @@ import org.junit.Test;
  * @Date：2020-06-26 11:54
  * @Description：双向链表测试代码
  */
-public class DoubleLinkListTEst {
+public class DoubleLinkListTest {
 
     DoubleLinkList doubleLinkList = new DoubleLinkList();
 

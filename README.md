@@ -32,7 +32,20 @@
    - Mazu：迷宫回溯问题
    - EightQueens：八皇后问题
 
-5. sort:
+5. search:
+
+   - BinarySearch：二分查找
+   - FibonacciSearch：斐波那契查找
+   - InsertSearch：插值查找
+   - LinearSearch：线性查找
+
+6. hashtable:
+
+   - HashTable：哈希表
+   - Node：链表节点类
+   - SingleLinkList：单链表
+
+7. sort:
 
    - BubbleSort：冒泡排序
    - InsertSort：插入排序
@@ -42,10 +55,5 @@
    - MergeSort：归并排序
    - RadixSort：基数排序
 
-   6.search:
-
-   - BinarySearch：二分查找
-   - FibonacciSearch：斐波那契查找
-   - InsertSearch：插值查找
-   - LinearSearch：线性查找
+   
 
