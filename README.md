@@ -45,7 +45,12 @@
    - Node：链表节点类
    - SingleLinkList：单链表
 
-7. sort:
+7. tree:
+
+   - BinaryTree：二叉树
+   - BinaryTreeNode：二叉树节点
+
+8. sort:
 
    - BubbleSort：冒泡排序
    - InsertSort：插入排序
@@ -54,6 +59,10 @@
    - QuickSort：快速排序
    - MergeSort：归并排序
    - RadixSort：基数排序
+
+   
+
+   
 
    
 
