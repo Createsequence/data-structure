@@ -174,4 +174,38 @@ public class BinaryTree {
         }
         return result;
     }
+
+    public void delete(int num) {
+        delete(num, root);
+    }
+
+    /**
+     * 删除节点
+     * @param num
+     * @param node
+     */
+    public void delete(int num, BinaryTreeNode node) {
+        //判断删除的是否为根节点
+        if (root.getNodeNum() == num) {
+            throw new RuntimeException("不允许删除根节点！");
+        }
+
+        //如果子节点就是要删除的节点
+        if (node.getLeft() != null && node.getLeft().getNodeNum() == num) {
+            node.setLeft(null);
+            return;
+        }
+        if (node.getRight() != null && node.getRight().getNodeNum() == num) {
+            node.setRight(null);
+            return;
+        }
+        //否则就往左树或右树遍历直到找到或遍历完为止
+        if (node.getLeft() != null) {
+            delete(num, node.getLeft());
+        }
+        if (node.getRight() != null) {
+            delete(num,node.getRight());
+        }
+    }
+
 }

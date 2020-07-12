@@ -56,4 +56,22 @@ public class BinaryTreeTest {
         System.out.println(tree.postSearch(1));
     }
 
+    @Test
+    public void testDelete() {
+        System.out.println("前序遍历：");
+        tree.preOrder();
+
+        System.out.println("删除2");
+        tree.delete(2);
+        System.out.println("前序遍历：");
+        tree.preOrder();
+
+        System.out.println("删除7");
+        tree.delete(7);
+        System.out.println("前序遍历：");
+        tree.preOrder();
+
+
+    }
+
 }
