@@ -1,6 +1,5 @@
 package com.huang.example.tree;
 
-import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -70,8 +69,6 @@ public class BinaryTreeTest {
         tree.delete(7);
         System.out.println("前序遍历：");
         tree.preOrder();
-
-
     }
 
 }
