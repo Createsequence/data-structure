@@ -49,6 +49,8 @@
 
    - BinaryTree：二叉树
    - BinaryTreeNode：二叉树节点
+   - ArrBinaryTree：顺序二叉树
+   - HeapSort：堆排序
 
 8. sort:
 
