@@ -52,7 +52,14 @@
    - ArrBinaryTree：顺序二叉树
    - HeapSort：堆排序
 
-8. sort:
+8. huffman:
+
+   - HuffmanTree：赫夫曼树
+   - Node：赫夫曼树节点类
+   - HuffmanCode：赫夫曼编码
+   - HuffmanCodeNode：赫夫曼编码节点类
+
+9. sort:
 
    - BubbleSort：冒泡排序
    - InsertSort：插入排序
