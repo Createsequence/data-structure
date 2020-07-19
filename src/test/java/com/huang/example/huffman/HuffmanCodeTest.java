@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class HuffmanCodeTest {
 
-    public static HuffmanCode code = new HuffmanCode("i am a jvav programer,i love coding");
+    public static HuffmanCode code = new HuffmanCode("I am a jvav programmer and I love programming");
 
     @BeforeClass
     public static void print(){
@@ -41,6 +41,13 @@ public class HuffmanCodeTest {
         System.out.println("压缩后字符长度：" + bytes.length);
         System.out.println(Arrays.toString(bytes));
         //[96, 26, 1, 7, -15, -16, -34, -59, -31, -92, -24, 96, -100, -12, 2, -61, 107, 5]
+    }
+
+    @Test
+    public void testDecode() {
+        byte[] bytes = code.zip();
+        bytes = code.decode(bytes);
+        System.out.println("解码后：" + new String(bytes));
     }
 
 }

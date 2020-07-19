@@ -193,4 +193,77 @@ public class HuffmanCode {
         return zip(bytes, huffmanCodes);
     }
 
+    /**
+     * 将byte转成二进制字符串
+     * @param isComple 是否需要补高位。最后一个字节无需补位
+     * @param b 要转换的字节
+     * @return
+     */
+    private String byteToString(boolean isComplate, byte b) {
+        int temp = b;
+        //判断是否需要补齐高位
+        if (isComplate) {
+            temp |= 256;
+        }
+        //返回temp对应的二进制补码
+        String str = Integer.toBinaryString(temp);
+        return isComplate ? str.substring(str.length() - 8) : str;
+    }
+
+    /**
+     * 解码
+     * @param huffmanCodes 赫夫曼编码表
+     * @param huffmanBytes 赫夫曼编码处理过的字节数组
+     * @return 原来未被转为赫夫曼编码的的字符串字节素组
+     */
+    private byte[] decode(Map<Byte, String> huffmanCodes, byte[] huffmanBytes) {
+
+        //将赫夫曼编码处理过byte数组转为二进制字符串
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < huffmanBytes.length; i++) {
+
+            boolean isComplate = true;
+            //如果是最后一个字节就不用补高位了
+            if (i == huffmanBytes.length - 1) {
+                isComplate = false;
+            }
+            //拼接字节转的二进制字符串
+            stringBuilder.append(byteToString(isComplate, huffmanBytes[i]));
+        }
+
+        //把字符串按照指定赫夫曼编码进行解码
+        //原本赫夫曼编码表是<字节，二进制字符串>，现在要转为<二进制字符串，字节>以通过转换得到的二进制字符串取出对应的字节
+        Map<String, Byte> reHuffmanCodes = new HashMap<>();
+        for (Map.Entry<Byte, String> entry : huffmanCodes.entrySet()) {
+            reHuffmanCodes.put(entry.getValue(), entry.getKey());
+        }
+
+        List<Byte> bytes = new ArrayList<>();
+        //由于无法确认拼接后的二进制字符串每八位一定就能和某个字节对应，所以需要进行字符串匹配
+        //这里可以简单理解为双指针，一号指针从i开始，二号指针从i+1开始
+        //一号指针先指向字符串第i字符，然后二号指针从i+1个字符开始不断后移，然后进行进行匹配
+        //比如：i=0，j=1，第一次截取并匹配的字符就是[0,1),也就是0；第二次是[0,2)，也就是01；然后是[0,3).....以此类推
+        //直到找到以后，比如[2,7)，就移动一号指针到7，二号指针移动到8
+        for (int i = 0, j = 1; i < stringBuilder.length(); i = --j) {
+            String key = "";
+            while (!reHuffmanCodes.containsKey(key)) {
+                key = stringBuilder.substring(i, j);
+                j++;
+            }
+            bytes.add(reHuffmanCodes.get(key));
+        }
+
+        //由集合转为字节数组
+        byte b[] = new byte[bytes.size()];
+        for (int i = 0; i < b.length; i++) {
+            b[i] = bytes.get(i);
+        }
+
+        return b;
+    }
+
+    public byte[] decode(byte[] huffmanBytes) {
+        return decode(huffmanCodes, huffmanBytes);
+    }
+
 }
