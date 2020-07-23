@@ -51,6 +51,8 @@
    - BinaryTreeNode：二叉树节点
    - ArrBinaryTree：顺序二叉树
    - HeapSort：堆排序
+   - BinarySortTree：二叉排序树
+   - AVLTree：平衡二叉树
 
 8. huffman:
 

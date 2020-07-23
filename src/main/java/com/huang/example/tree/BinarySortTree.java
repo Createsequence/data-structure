@@ -125,7 +125,7 @@ public class BinarySortTree {
      * 删除指定节点
      * @param val 要删除节点的值
      */
-    private void deleteNode(int val) {
+    public void deleteNode(int val) {
         //判断要删除的是否为根节点
         if (root.val == val && root.left == null && root.right == null) {
             throw new RuntimeException("树中只有根节点，无法删除!");
